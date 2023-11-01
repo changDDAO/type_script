@@ -1,23 +1,31 @@
-/* interface Animal{
-    name: string;
+/* interface getLikeNumber {
+(like:number):number;
 }
-interface Bear extends Animal{
-    honey: boolean;
+interface Post{
+    id: number;
+    title: string;
+    getLikeNumber: getLikeNumber;
 }
-
-const bear1: Bear = {
-    name: "bear",
-    honey: true
+const post1: Post ={
+    id: 1,
+    title: 'post1',
+    getLikeNumber(like:number){
+        return like;
+    }
 } */
+interface Post{
+    id: number;
+    title: string;
+    [key: string]: unknown;
+}
+const post1: Post = {
+    id: 1,
+    title: 'post1',
+}
+post1['description'] = 'description1';
+interface Names{
+    [key: number]: string;
+}
 
-type Animal = {
-    name: string;
-}
-type Bear = Animal & {
-    honey: boolean;
-}
-
-const bear2: Bear = {
-    name: 'honey bear',
-    honey: true
-}
+const userNames =['John','Kim','Youn']
+userNames[0]==='John'
